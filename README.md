@@ -1,6 +1,6 @@
 # Dev Blog
 
-> A Blog for developers.
+> A Blog for developers, a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## Built with
   - Ruby
@@ -15,6 +15,8 @@ This repository makes use of Ruby as its core programming language :
  `git clone https://github.com/Lockless404/devBlog.git` in your PC terminal
 - Navigate to project's folder/directory
   `cd devBlog`
+- Enter `bundle install` to install dependencies.
+- Enter `rspec` to run tests.
 - Use your code editor and start contributing.
 
 ## Authors
