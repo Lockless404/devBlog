@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show]
   end
 
-  root "posts#index"
+  root "users#index"
 end

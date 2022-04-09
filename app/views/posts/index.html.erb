@@ -1,1 +1,8 @@
-<h1>Posts for a given user.<h1>
+<%= render partial: "shared/user", locals: { user: @user } %>
+<%@posts.each do |post|%>
+<%= render partial: "shared/post", locals: { post: post } %>
+  <%post.last_five_comments.each do |comment|%>
+  <%= render partial: "shared/comment", locals: { comment: comment } %>
+  <% end %>
+<% end %>
+<button>Pogination</button>
