@@ -16,8 +16,9 @@ This repository makes use of Ruby as its core programming language :
 - Navigate to project's folder/directory
   `cd devBlog`
 - Enter `bundle install` to install dependencies.
+- Enter `rails db:create db:migrate db:seed` to populate the database
 - Enter `rspec` to run tests.
-- Use your code editor and start contributing.
+- Enter `rails s` and navigate to `http://localhost:3000/` on your web browser to view the website.
 
 ## Authors
 
