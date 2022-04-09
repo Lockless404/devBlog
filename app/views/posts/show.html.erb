@@ -1,1 +1,10 @@
-<h1>The specific post</h1>
+<div class="fullPost">
+  <div class="postHead">
+  <h4>Post #<%= @post.id %> by <%= @post.author.name %></h4>
+  <p>Comments: <%= @post.comments_counter %>, Likes:<%= @post.like_counter %></p>
+  </div>
+  <p><%= @post.text %></p>
+</div>
+<%@comments.each do |comment|%>
+<%= render partial: "shared/comment", locals: { comment: comment } %>
+<% end %>
