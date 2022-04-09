@@ -23,31 +23,31 @@ body {
 }
 
 div {
- display: flex;
- width: 90%;
- justify-content: space-between;
- margin: 0 5%;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: 0 5%;
 }
 
 .userImg {
- display: flex;
- justify-content: flex-start;
- align-items: center;
- width: 20%;
- margin-left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+  margin-left: 0;
 }
 
 img {
- width: 60%;
- height: 60%;
+  width: 60%;
+  height: 60%;
 }
 
 .userInfo {
- display: flex;
- align-items: center;
- justify-content: space-between;
- width: 70%;
- margin: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 5%;
 }
 
 .userPosts {
