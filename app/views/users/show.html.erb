@@ -6,4 +6,6 @@
 <%@posts.each do |post|%>
 <%= render partial: "shared/post", locals: { post: post } %>
 <% end %>
-<button>See all posts</button>
+<%= link_to user_posts_path(@user) do %>
+  <button type="button">See all posts</button>
+<% end %>

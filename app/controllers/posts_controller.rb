@@ -8,4 +8,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comment
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end
