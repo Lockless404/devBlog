@@ -1,7 +1,17 @@
 class CommentsController < ApplicationController
-  def new; end
+  before_action :current_user, only: [:create]
 
-  def create; end
+  def create
+    @comment = current_user.comment.new(comment_params)
+    @comment.author_id = current_user.id
+    @comment.post_id = params[:post_id]
+
+    if @comment.save
+      redirect_to user_post_path(current_user.id, Post.find(params[:post_id]))
+    else
+      render :new
+    end
+  end
 
   private
 

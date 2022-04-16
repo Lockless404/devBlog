@@ -1,4 +1,4 @@
-<h1>Posts#New</h1>
+<h1 class= "formHead">Create Post</h1>
 
 <%= form_with model: @post, url: "/users/#{current_user.id}/posts" do |form| %>
   <div>
@@ -12,5 +12,5 @@
     <%= form.label :text %>
     <%= form.text_area :text %>
   </div>
-  <%= form.submit %>
+  <%= form.submit html: {class: "submitButton"} %>
 <% end %>
