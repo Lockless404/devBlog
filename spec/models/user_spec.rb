@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'Name length should be greater than 1 character' do
-    subject.name = ""
+    subject.name = ''
     expect(subject).to_not be_valid
   end
 
@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'last_three_posts method should return last three posts' do
-    first_post = Post.create(author: subject, title: 'first post', text: '1')
+    Post.create(author: subject, title: 'first post', text: '1')
     second_post = Post.create(author: subject, title: 'second post', text: '1')
     third_post = Post.create(author: subject, title: 'third post', text: '1')
     fourth_post = Post.create(author: subject, title: 'fourth post', text: '1')
