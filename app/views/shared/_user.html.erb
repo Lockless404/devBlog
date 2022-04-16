@@ -3,9 +3,12 @@
     <img src=<%=user.photo%>>
   </div>
   <div class="userInfo">
-    <h1><%=user.name%></h1>
+    <%= link_to user_path(user.id) do %>
+      <h1><%=user.name%></h1>
+    <% end %>
     <a class="userPosts" src="#">
       <p >Number of Posts:<%=user.posts_counter%></p>
     </a>
   </div>
 </div>
+

@@ -75,7 +75,7 @@ li {
   flex-direction: column;
 }
 
-button {
+a {
   align-self: center;
 }
 
@@ -85,4 +85,51 @@ button {
 
 .postHead {
   margin: 0;
+}
+
+.formHead {
+  margin: 2% 5%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2%;
+}
+
+form div {
+  justify-content: flex-start;
+  margin: 2% 5%;
+}
+
+input {
+  width: 10%;
+}
+
+label {
+  margin: 0 2%;
+}
+
+.commentLike {
+  justify-content: flex-start;
+}
+
+.submitButton {
+  align-self: center;
+}
+
+.commentButton {
+  align-self: flex-start;
+  margin: 0 5%;
+  width: auto;
+}
+
+.likeButton {
+  width: auto;
+  justify-self: flex-end;
+}
+
+.likeDiv {
+  justify-content: flex-end;
 }
