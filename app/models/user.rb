@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }
 
+  ROLES = %w[admin User].freeze
+
   def last_three_posts
     Post.all.where("author_id = #{id}").limit(3).order(created_at: :desc)
   end
