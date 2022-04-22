@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -7,12 +5,12 @@ class Ability
     # Define abilities for the passed in user here.
 
     user ||= User.new # guest user (not logged in)
-    if user.role == "admin"
+    if user.role == 'admin'
       can :destroy, [Post, Comment]
     else
       can :read, :all
-      can [:destroy, :create], Post, author_id: user.id
-      can [:destroy, :create], Comment, author_id: user.id
+      can %i[destroy create], Post, author_id: user.id
+      can %i[destroy create], Comment, author_id: user.id
     end
 
     # The first argument to `can` is the action you are giving the user
