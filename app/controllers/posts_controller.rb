@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :current_user, only: [:create]
 
   def index
@@ -26,6 +27,15 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Post not saved'
       render :new
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    @user = User.find(post.author.id)
+    @user.posts_counter -= 1
+    post.destroy
+    @user.save
+    redirect_to user_post_path, notice: 'Your post was deleted successfully'
   end
 
   private
