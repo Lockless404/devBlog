@@ -53,6 +53,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
   gem 'populator'
+  gem "database_cleaner"
   gem 'rspec-rails', '~> 5.0.0'
 end
 
