@@ -19,4 +19,9 @@
 </div>
 <%@comments.each do |comment|%>
 <%= render partial: "shared/comment", locals: { comment: comment } %>
+<div>
+  <% if can? :destroy, comment %>
+    <%= button_to "Delete", user_post_comment_path(@post.author.id, @post.id, comment.id), method: :delete, params: { comment_id: comment.id}%>
+  <% end %>
+</div>
 <% end %>
