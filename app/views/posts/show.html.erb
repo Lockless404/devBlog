@@ -6,17 +6,22 @@
   <p><%= @post.text %></p>
 </div>
 <div class="commentLike">
-  <%= form_with url: "/posts/#{@post.id}/comments", scope: :comment do |form| %>
-  <div >
-    <%= form.label :text %>
-    <%= form.text_area :text, required: true %>
-  </div>
-  <%= form.submit class: "commentButton" %>
+    <%= form_with url: "/users/#{@post.author.id}/posts/#{@post.id}/comments", scope: :comment do |form| %>
+    <div >
+      <%= form.label :text %>
+      <%= form.text_area :text, required: true %>
+    </div>
+    <%= form.submit class: "commentButton" %>
   <% end %>
-  <%= form_with url: "/posts/#{@post.id}/likes", class: "likeDiv", scope: :like do |form| %>
+  <%= form_with url: "/users/#{@post.author.id}/posts/#{@post.id}/likes", class: "likeDiv", scope: :like do |form| %>
     <%= form.submit "Like ", class: "likeButton"%>
   <% end %>
 </div>
 <%@comments.each do |comment|%>
 <%= render partial: "shared/comment", locals: { comment: comment } %>
+<div>
+  <% if can? :destroy, comment %>
+    <%= button_to "Delete", user_post_comment_path(@post.author.id, @post.id, comment.id), method: :delete, params: { comment_id: comment.id}%>
+  <% end %>
+</div>
 <% end %>

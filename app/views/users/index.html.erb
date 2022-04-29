@@ -1,3 +1,7 @@
 <%@users.each do |user|%>
 <%= render partial: "shared/user", locals: { user: user } %>
 <% end %>
+<%= link_to new_user_session_path do %>
+  <button type="button">Sign in</button>
+<% end %>
+
